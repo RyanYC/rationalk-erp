@@ -1,0 +1,101 @@
+<template name="plan">
+	<div class="row">
+		<div class="col-md-12">
+			 <div class="panel panel-default">
+			 	<div class="panel-heading" style="position:relative">
+			 		<h3 class="panel-title">Production Planning</h3>
+        		</div>
+				<div class="panel-body">
+					{{> reactiveTable collection=productionPlanning settings=settingsProductionPlanning}}
+        		</div>
+    		</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			 <div class="panel panel-default">
+			 	<div class="panel-heading" style="position:relative">
+			 		<h3 class="panel-title">Ressource Planning</h3>
+        </div>
+				<div class="panel-body">
+					{{ressourcePlanning}}
+        </div>
+  		</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			 <div class="panel panel-default">
+			 	<div class="panel-heading" style="position:relative">
+			 		<h3 class="panel-title">Gantt</h3>
+        </div>
+				<div class="panel-body">
+  				<div id="gantt_here" style='width: 100%; height: 500px;'></div>
+        </div>
+  		</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			 <div class="panel panel-default">
+			 	<div class="panel-heading" style="position:relative">
+			 		<h3 class="panel-title">Stock movements Forecast</h3>
+        		</div>
+				<div class="panel-body">
+					{{> reactiveTable collection=stockMovements settings=settingsStockMovements}}
+        		</div>
+    		</div>
+		</div>
+	</div>
+		<div class="row">
+		<div class="col-md-12">
+			 <div class="panel panel-default">
+			 	<div class="panel-heading" style="position:relative">
+			 		<h3 class="panel-title">Plan production</h3>
+        		</div>
+				<div class="panel-body">
+					<form>
+				        <div class="form-group">
+					        <div class="form-group">
+								<label for="productName">Product Name</label>
+								<input type="text" class="form-control" name="productName" id="productName" placeholder="Product Name">
+  							</div>
+					    </div>
+					    <div class="form-group">
+					        <div class="form-group">
+								<label for="productQty">Quantity</label>
+								<input type="text" class="form-control" name="productQty" id="productQty" placeholder="100">
+  							</div>
+					    </div>
+					    <div class="form-group">
+					        <div class="form-group">
+								<label for="productionStep">Production Step</label>
+								<input type="text" class="form-control" name="productionStep" id="productionStep" placeholder="Turning, Griding or Assembly">
+  							</div>
+					    </div>
+							<div class="form-group">
+					      <div class="form-group">
+									<label for="ressource">Ressource</label>
+									<input type="text" class="form-control" name="ressource" id="ressource" placeholder="Machine 1, Machine 2, John, Paul">
+  							</div>
+					    </div>
+					    <div class="form-group">
+					        <div class="form-group">
+								<label for="startDate">Start Date</label>
+								<input type="text" class="form-control" name="startDate" id="startDate" placeholder="2015-02-18">
+  							</div>
+					    </div>
+							<div class="form-group">
+					        <div class="form-group">
+								<label for="duration">Duration [Days]</label>
+								<input type="text" class="form-control" name="duration" id="duration" placeholder="1">
+  							</div>
+					    </div>
+
+					    <button type="submit" class="btn btn-primary">Plan</button>
+				    </form>
+        		</div>
+    		</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,46 @@
+<template name="build">
+	<div class="row">
+		<div class="col-md-12">
+			 <div class="panel panel-default">
+			 	<div class="panel-heading" style="position:relative">
+			 		<h3 class="panel-title">Product Builder for : {{productName}}</h3>
+        		</div>
+				<div class="panel-body">
+					{{> reactiveTable collection=Needs settings=settingsNeeds}}			        			
+        		</div>
+    		</div>
+		</div>
+	</div>
+		<div class="row">
+		<div class="col-md-12">
+			 <div class="panel panel-default">
+			 	<div class="panel-heading" style="position:relative">
+			 		<h3 class="panel-title">Add need to this product</h3>
+        		</div>
+				<div class="panel-body">		
+					<form>
+				        <div class="form-group">
+					        <div class="form-group">
+								<label for="productName">Product Name</label>
+								<input type="text" class="form-control" name="productName" id="productName" placeholder="Bearing 6000">
+  							</div>
+					    </div>
+					    <div class="form-group">
+					        <div class="form-group">
+								<label for="productionStep">Production Step</label>
+								<input type="text" class="form-control" name="productionStep" id="productionStep" placeholder="Turning, Griding or Assembly">
+  							</div>
+					    </div>
+					    <div class="form-group">
+					        <div class="form-group">
+								<label for="productQty">Quantity</label>
+								<input type="text" class="form-control" name="productQty" id="productQty" placeholder="100">
+  							</div>
+					    </div>
+					    <button type="submit" class="btn btn-primary">Save</button>
+				    </form>
+        		</div>
+    		</div>
+		</div>
+	</div>
+</template>
