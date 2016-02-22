@@ -1,0 +1,46 @@
+<template name="transactions">
+	<div class="row">
+		<div class="col-md-12">
+			 <div class="panel panel-default">
+			 	<div class="panel-heading" style="position:relative">
+			 		<h3 class="panel-title">Transactions</h3>
+        </div>
+				<div class="panel-body">
+					<ul>
+					{{#each planningEntries}}
+						<li>
+						<strong>{{name}} / {{date}}</strong>
+						{{>operations}}
+						</li>
+					{{/each}}
+					</ul>
+        </div>
+    	</div>
+		</div>
+	</div>
+</template>
+
+<template name="operations">
+	{{#if operations.length}}
+		<p>Operations for product : {{name}}</p>
+		<ul>
+			{{#each operations}}
+					<li>{{>operation}}</li>
+			{{/each}}
+		</ul>
+	{{else}}
+		<small>This product has no operation needed</small>
+	{{/if}}
+</template>
+
+<template name="operation">
+	<p>Operation needs for operation :  {{name}}</p>
+	<ul>
+		{{#each needs}}
+			<li>
+				<p>Product name : {{name}} / Needed quantity : {{qty}}</p>
+				{{>operations}}
+			</li>
+		{{/each}}
+	</ul>
+</template>

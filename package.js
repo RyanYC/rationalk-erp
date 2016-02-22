@@ -24,6 +24,8 @@ Package.onUse(function (api) {
   api.addFiles([
     'lib/client/plan.html',
     'lib/client/plan.js',
+    'lib/client/transactions.html',
+    'lib/client/transactions.js',
     'lib/client/build.html',
     'lib/client/build.js',
     'lib/client/stocks.html',
@@ -31,6 +33,7 @@ Package.onUse(function (api) {
   ], 'client');
 
   api.addFiles([
+    'lib/server/demo.js',
     'lib/server/publications.js',
     'lib/server/methods.js',
   ], 'server');
