@@ -1,0 +1,36 @@
+<template name="RKProducts">
+	<div class="row">
+		<div class="col-md-12">
+			 <div class="panel panel-default">
+			 	<div class="panel-heading" style="position:relative">
+			 		<h3 class="panel-title">Products</h3>
+        </div>
+				<div class="panel-body">
+					{{>products}}
+        </div>
+    	</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="products">
+	{{#if products.length}}
+		<ul>
+			{{#each products}}
+					<li>{{>product}}</li>
+			{{/each}}
+		</ul>
+	{{/if}}
+</template>
+
+<template name="product">
+	<p>Product name : {{name}} / Qty : {{qty}} / Operation : {{operation}} / Duration : {{duration}}</p>
+	<ul>
+		{{#each needs}}
+			<li>
+				{{>product}}
+			</li>
+		{{/each}}
+	</ul>
+</template>

@@ -12,7 +12,7 @@
 				<div class="panel-body">
 					<table class="table">
 						<thead>
-							<tr><th>Date</th><th>Name</th><th>Qty</th><th>Operation</th><th>Note</th><th>Cumulative qty</th></tr>
+							<tr><th>Date</th><th>Name</th><th>Qty</th><th>Operation</th><th>Operation Path</th><th>Note</th><th>Cumulative qty</th></tr>
 						</thead>
 						<tbody>
 							{{#each transactionsData}}
@@ -27,5 +27,5 @@
 </template>
 
 <template name="transactionRow">
-	<tr  class="{{rowClass}}"><td>{{date}}</td><td>{{name}}</td><td>{{qty}}</td><td>{{operation}}</td><td>{{note}}</td><td>{{cumulativeQty}}</td></tr>
+	<tr  class="{{rowClass}}"><td>{{date}}</td><td>{{name}}</td><td>{{qty}}</td><td>{{operation}}</td><td><a href="{{pathFor 'RKERPgantt' productionId=operationPath}}">{{operationPath}}</a></td><td>{{note}}</td><td>{{cumulativeQty}}</td></tr>
 </template>

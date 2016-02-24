@@ -30,12 +30,17 @@ Package.onUse(function (api) {
     'lib/client/build.js',
     'lib/client/stocks.html',
     'lib/client/stocks.js',
+    'lib/client/products.html',
+    'lib/client/products.js',
+    'lib/client/gantt.html',
+    'lib/client/gantt.js',
   ], 'client');
 
   api.addFiles([
     'lib/server/demo.js',
     'lib/server/publications.js',
     'lib/server/methods.js',
+    'lib/server/methods-transactions.js',
   ], 'server');
 
   api.export([
